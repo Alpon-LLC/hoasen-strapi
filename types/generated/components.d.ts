@@ -24,9 +24,7 @@ export interface SharedBusinessObjective extends Struct.ComponentSchema {
     description: Schema.Attribute.String & Schema.Attribute.Required;
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
-    order: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    order: Schema.Attribute.Integer;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -123,9 +121,7 @@ export interface SharedSolution extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
     image_alt: Schema.Attribute.String;
-    order: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    order: Schema.Attribute.Integer;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -138,9 +134,7 @@ export interface SharedStat extends Struct.ComponentSchema {
   };
   attributes: {
     label: Schema.Attribute.String & Schema.Attribute.Required;
-    order: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    order: Schema.Attribute.Integer;
     value: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -153,9 +147,7 @@ export interface SharedTestimonial extends Struct.ComponentSchema {
   };
   attributes: {
     author_company: Schema.Attribute.String;
-    author_name: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    author_name: Schema.Attribute.String;
     author_role: Schema.Attribute.String;
     quote: Schema.Attribute.Blocks & Schema.Attribute.Required;
   };

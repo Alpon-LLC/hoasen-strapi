@@ -12,8 +12,8 @@
     },
     "author_name": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": false,
+      "unique": false
     },
     "author_role": {
       "type": "string"

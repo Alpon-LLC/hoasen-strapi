@@ -16,8 +16,8 @@
     },
     "order": {
       "type": "integer",
-      "required": true,
-      "unique": true
+      "required": false,
+      "unique": false
     }
   },
   "config": {}
