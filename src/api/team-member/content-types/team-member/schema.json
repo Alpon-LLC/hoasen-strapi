@@ -37,11 +37,36 @@
       "target": "api::project.project",
       "mappedBy": "team_members"
     },
-    "notion_portfolio_url": {
-      "type": "string"
+    "role": {
+      "type": "string",
+      "required": true
     },
-    "linkedin_url": {
-      "type": "string"
+    "social_links": {
+      "type": "component",
+      "component": "pages.team-social-link",
+      "repeatable": true
+    },
+    "framework_and_tool": {
+      "type": "component",
+      "component": "pages.team-framework-and-tool",
+      "repeatable": true
+    },
+    "experience": {
+      "type": "component",
+      "component": "pages.team-experience",
+      "repeatable": true
+    },
+    "skills": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::skill.skill",
+      "mappedBy": "team_members"
+    },
+    "get_to_know": {
+      "type": "text"
+    },
+    "why_work_with_them": {
+      "type": "text"
     }
   }
 }

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_pages_team_framework_and_tools",
+  "info": {
+    "displayName": "TeamFrameworkAndTool",
+    "icon": "scissors"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

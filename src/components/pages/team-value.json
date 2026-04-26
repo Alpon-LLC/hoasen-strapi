@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_pages_team_values",
+  "info": {
+    "displayName": "TeamValueList"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "component": "pages.team-value-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

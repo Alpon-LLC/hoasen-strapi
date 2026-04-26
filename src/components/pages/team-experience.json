@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_pages_team_experiences",
+  "info": {
+    "displayName": "TeamExperience",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "organization": {
+      "type": "string",
+      "required": false
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "employment_type": {
+      "type": "enumeration",
+      "enum": [
+        "full-time",
+        "part-time",
+        "temporary",
+        "contract"
+      ]
+    },
+    "what_they_did": {
+      "type": "richtext",
+      "required": false
+    }
+  },
+  "config": {}
+}
