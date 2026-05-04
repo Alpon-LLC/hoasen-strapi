@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_pages_team_member_roles",
+  "info": {
+    "displayName": "TeamMemberRole",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "role_name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "role_description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

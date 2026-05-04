@@ -52,18 +52,17 @@ export interface PagesTeamMemberList extends Struct.ComponentSchema {
   };
 }
 
-export interface PagesTeamSocialLink extends Struct.ComponentSchema {
-  collectionName: 'components_pages_team_social_links';
+export interface PagesTeamMemberRole extends Struct.ComponentSchema {
+  collectionName: 'components_pages_team_member_roles';
   info: {
-    displayName: 'TeamSocialLink';
+    displayName: 'TeamMemberRole';
+    icon: 'crown';
   };
   attributes: {
-    member_social_url: Schema.Attribute.String & Schema.Attribute.Required;
-    social_media: Schema.Attribute.String;
-    social_media_logo: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    > &
-      Schema.Attribute.Required;
+    role_description: Schema.Attribute.String;
+    role_name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
   };
 }
 
@@ -116,6 +115,36 @@ export interface SharedBusinessObjective extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     order: Schema.Attribute.Integer;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedContactLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contact_links';
+  info: {
+    displayName: 'ContactLink';
+    icon: 'phone';
+  };
+  attributes: {
+    contact_url: Schema.Attribute.String & Schema.Attribute.Required;
+    platform: Schema.Attribute.Enumeration<
+      [
+        'linkedin',
+        'x',
+        'telegram',
+        'email',
+        'instagram',
+        'facebook',
+        'google',
+        'zalo',
+        'wechat',
+        'weibo',
+        'line',
+        'viber',
+        'whatsapp',
+      ]
+    > &
+      Schema.Attribute.Required;
+    platform_logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
   };
 }
 
@@ -271,11 +300,12 @@ declare module '@strapi/strapi' {
       'pages.team-experience': PagesTeamExperience;
       'pages.team-framework-and-tool': PagesTeamFrameworkAndTool;
       'pages.team-member-list': PagesTeamMemberList;
-      'pages.team-social-link': PagesTeamSocialLink;
+      'pages.team-member-role': PagesTeamMemberRole;
       'pages.team-value': PagesTeamValue;
       'pages.team-value-item': PagesTeamValueItem;
       'shared.brief-background': SharedBriefBackground;
       'shared.business-objective': SharedBusinessObjective;
+      'shared.contact-link': SharedContactLink;
       'shared.gallery-images': SharedGalleryImages;
       'shared.hero': SharedHero;
       'shared.media': SharedMedia;

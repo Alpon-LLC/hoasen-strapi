@@ -35,11 +35,6 @@
       "type": "string",
       "required": true
     },
-    "social_links": {
-      "type": "component",
-      "component": "pages.team-social-link",
-      "repeatable": true
-    },
     "framework_and_tool": {
       "type": "component",
       "component": "pages.team-framework-and-tool",

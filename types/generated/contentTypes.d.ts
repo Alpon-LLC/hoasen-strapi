@@ -663,7 +663,6 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
     role: Schema.Attribute.String & Schema.Attribute.Required;
     skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
-    social_links: Schema.Attribute.Component<'pages.team-social-link', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

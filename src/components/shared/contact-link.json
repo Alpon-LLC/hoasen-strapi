@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_shared_contact_links",
+  "info": {
+    "displayName": "ContactLink",
+    "icon": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "platform": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "linkedin",
+        "x",
+        "telegram",
+        "email",
+        "instagram",
+        "facebook",
+        "google",
+        "zalo",
+        "wechat",
+        "weibo",
+        "line",
+        "viber",
+        "whatsapp"
+      ]
+    },
+    "platform_logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "contact_url": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
