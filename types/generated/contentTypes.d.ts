@@ -581,10 +581,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     solutions: Schema.Attribute.Component<'shared.solution', true>;
     stats: Schema.Attribute.Component<'shared.stat', true>;
-    team_members: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::team-member.team-member'
-    >;
+    team_members: Schema.Attribute.Component<'pages.team-member-list', false>;
     tech_infra_items: Schema.Attribute.Relation<
       'manyToMany',
       'api::tech-infra-item.tech-infra-item'
@@ -662,7 +659,6 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    projects: Schema.Attribute.Relation<'manyToMany', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
     role: Schema.Attribute.String & Schema.Attribute.Required;
     skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;

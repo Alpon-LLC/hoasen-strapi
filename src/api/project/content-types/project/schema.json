@@ -61,12 +61,6 @@
       "component": "shared.brief-background",
       "repeatable": false
     },
-    "team_members": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::team-member.team-member",
-      "inversedBy": "projects"
-    },
     "gallery_images": {
       "type": "component",
       "component": "shared.media",
@@ -120,6 +114,11 @@
       "relation": "manyToMany",
       "target": "api::tech-infra-item.tech-infra-item",
       "inversedBy": "projects"
+    },
+    "team_members": {
+      "type": "component",
+      "component": "pages.team-member-list",
+      "repeatable": false
     }
   }
 }

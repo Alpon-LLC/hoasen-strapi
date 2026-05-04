@@ -31,12 +31,6 @@
         "audios"
       ]
     },
-    "projects": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::project.project",
-      "mappedBy": "team_members"
-    },
     "role": {
       "type": "string",
       "required": true
