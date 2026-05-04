@@ -31,10 +31,6 @@
         "audios"
       ]
     },
-    "role": {
-      "type": "string",
-      "required": true
-    },
     "framework_and_tool": {
       "type": "component",
       "component": "pages.team-framework-and-tool",
@@ -60,6 +56,11 @@
     "contact_links": {
       "type": "component",
       "component": "shared.contact-link",
+      "repeatable": true
+    },
+    "member_role": {
+      "type": "component",
+      "component": "pages.team-member-role",
       "repeatable": true
     }
   }

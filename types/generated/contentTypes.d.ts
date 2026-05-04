@@ -657,11 +657,11 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
       'api::team-member.team-member'
     > &
       Schema.Attribute.Private;
+    member_role: Schema.Attribute.Component<'pages.team-member-role', true>;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
-    role: Schema.Attribute.String & Schema.Attribute.Required;
     skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
