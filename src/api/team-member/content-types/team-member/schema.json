@@ -56,6 +56,11 @@
     },
     "why_work_with_them": {
       "type": "text"
+    },
+    "contact_links": {
+      "type": "component",
+      "component": "shared.contact-link",
+      "repeatable": true
     }
   }
 }
