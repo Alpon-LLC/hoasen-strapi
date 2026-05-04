@@ -22,7 +22,7 @@ export interface PagesTeamExperience extends Struct.ComponentSchema {
     >;
     end_date: Schema.Attribute.Date;
     organization: Schema.Attribute.String;
-    role: Schema.Attribute.String & Schema.Attribute.Required;
+    role: Schema.Attribute.Component<'pages.team-member-role', false>;
     start_date: Schema.Attribute.Date;
     what_they_did: Schema.Attribute.RichText;
   };
