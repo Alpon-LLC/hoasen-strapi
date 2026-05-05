@@ -509,6 +509,7 @@ export interface ApiDesignProjectDesignProject
       Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     team_members: Schema.Attribute.Component<'pages.team-member-list', false> &
       Schema.Attribute.Required;
     thumbnail_image: Schema.Attribute.Media<'images'> &

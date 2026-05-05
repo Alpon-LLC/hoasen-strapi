@@ -106,6 +106,11 @@
       "component": "pages.team-member-list",
       "repeatable": false,
       "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
     }
   }
 }
