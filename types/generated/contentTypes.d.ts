@@ -506,6 +506,7 @@ export interface ApiDesignProjectDesignProject
     product_gallery: Schema.Attribute.Component<'pages.design-gallery', false> &
       Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
     team_members: Schema.Attribute.Component<'pages.team-member-list', false> &
       Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -665,6 +666,10 @@ export interface ApiSkillSkill extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    design_projects: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::design-project.design-project'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'> &
       Schema.Attribute.Private;

@@ -27,6 +27,12 @@
         "audios"
       ]
     },
+    "skills": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::skill.skill",
+      "inversedBy": "design_projects"
+    },
     "brief_and_background": {
       "type": "component",
       "component": "shared.brief-background",

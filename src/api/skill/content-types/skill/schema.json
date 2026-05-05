@@ -32,6 +32,12 @@
       "relation": "manyToMany",
       "target": "api::team-member.team-member",
       "inversedBy": "skills"
+    },
+    "design_projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::design-project.design-project",
+      "mappedBy": "skills"
     }
   }
 }
