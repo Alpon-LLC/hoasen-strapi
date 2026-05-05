@@ -13,7 +13,7 @@ export interface PagesDesignGallery extends Struct.ComponentSchema {
     > &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'one column'>;
-    medias: Schema.Attribute.Media<'images' | 'videos' | 'audios'> &
+    medias: Schema.Attribute.Media<'images' | 'videos' | 'audios', true> &
       Schema.Attribute.Required;
     title: Schema.Attribute.String;
   };

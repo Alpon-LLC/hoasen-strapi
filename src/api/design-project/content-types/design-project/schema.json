@@ -33,6 +33,23 @@
       "target": "api::skill.skill",
       "inversedBy": "design_projects"
     },
+    "logo_icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "thumbnail_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "brief_and_background": {
       "type": "component",
       "component": "shared.brief-background",

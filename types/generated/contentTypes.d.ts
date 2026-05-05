@@ -494,6 +494,8 @@ export interface ApiDesignProjectDesignProject
       Schema.Attribute.Private;
     logo_gallery: Schema.Attribute.Component<'pages.design-gallery', false> &
       Schema.Attribute.Required;
+    logo_icon: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
     motion_animation_gallery: Schema.Attribute.Component<
       'pages.design-gallery',
       false
@@ -508,6 +510,8 @@ export interface ApiDesignProjectDesignProject
     publishedAt: Schema.Attribute.DateTime;
     skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
     team_members: Schema.Attribute.Component<'pages.team-member-list', false> &
+      Schema.Attribute.Required;
+    thumbnail_image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
