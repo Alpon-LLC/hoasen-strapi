@@ -485,6 +485,7 @@ export interface ApiDesignProjectDesignProject
       'images' | 'files' | 'videos' | 'audios'
     > &
       Schema.Attribute.Required;
+    hero_logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
