@@ -459,6 +459,61 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiDesignProjectDesignProject
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'design_projects';
+  info: {
+    displayName: 'DesignProject';
+    pluralName: 'design-projects';
+    singularName: 'design-project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    brief_and_background: Schema.Attribute.Component<
+      'shared.brief-background',
+      false
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    design_tone: Schema.Attribute.Component<'pages.design-tone', false> &
+      Schema.Attribute.Required;
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+    hero_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::design-project.design-project'
+    > &
+      Schema.Attribute.Private;
+    logo_gallery: Schema.Attribute.Component<'pages.design-gallery', false> &
+      Schema.Attribute.Required;
+    motion_animation_gallery: Schema.Attribute.Component<
+      'pages.design-gallery',
+      false
+    > &
+      Schema.Attribute.Required;
+    outcome: Schema.Attribute.Component<'shared.outcome', false> &
+      Schema.Attribute.Required;
+    pattern_gallery: Schema.Attribute.Component<'pages.design-gallery', false> &
+      Schema.Attribute.Required;
+    product_gallery: Schema.Attribute.Component<'pages.design-gallery', false> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    team_members: Schema.Attribute.Component<'pages.team-member-list', false> &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1252,6 +1307,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::design-project.design-project': ApiDesignProjectDesignProject;
       'api::global.global': ApiGlobalGlobal;
       'api::industry.industry': ApiIndustryIndustry;
       'api::project.project': ApiProjectProject;

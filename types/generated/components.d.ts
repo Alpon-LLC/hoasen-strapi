@@ -1,5 +1,36 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface PagesDesignGallery extends Struct.ComponentSchema {
+  collectionName: 'components_pages_design_galleries';
+  info: {
+    displayName: 'DesignGallery';
+    icon: 'picture';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    media_layout: Schema.Attribute.Enumeration<
+      ['one column', 'two columns', 'two columns - compact']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'one column'>;
+    medias: Schema.Attribute.Media<'images' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface PagesDesignTone extends Struct.ComponentSchema {
+  collectionName: 'components_pages_design_tones';
+  info: {
+    displayName: 'DesignTone';
+    icon: 'brush';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface PagesTeamCulture extends Struct.ComponentSchema {
   collectionName: 'components_pages_team_cultures';
   info: {
@@ -164,8 +195,8 @@ export interface SharedHero extends Struct.ComponentSchema {
     displayName: 'Hero';
   };
   attributes: {
-    subtitle: Schema.Attribute.Text & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -296,6 +327,8 @@ export interface SharedTestimonial extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'pages.design-gallery': PagesDesignGallery;
+      'pages.design-tone': PagesDesignTone;
       'pages.team-culture': PagesTeamCulture;
       'pages.team-experience': PagesTeamExperience;
       'pages.team-framework-and-tool': PagesTeamFrameworkAndTool;

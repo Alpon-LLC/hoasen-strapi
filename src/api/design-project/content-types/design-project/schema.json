@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "design_projects",
+  "info": {
+    "singularName": "design-project",
+    "pluralName": "design-projects",
+    "displayName": "DesignProject"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "brief_and_background": {
+      "type": "component",
+      "component": "shared.brief-background",
+      "repeatable": false,
+      "required": true
+    },
+    "design_tone": {
+      "type": "component",
+      "component": "pages.design-tone",
+      "repeatable": false,
+      "required": true
+    },
+    "logo_gallery": {
+      "type": "component",
+      "component": "pages.design-gallery",
+      "repeatable": false,
+      "required": true
+    },
+    "pattern_gallery": {
+      "type": "component",
+      "component": "pages.design-gallery",
+      "repeatable": false,
+      "required": true
+    },
+    "product_gallery": {
+      "type": "component",
+      "component": "pages.design-gallery",
+      "repeatable": false,
+      "required": true
+    },
+    "outcome": {
+      "type": "component",
+      "component": "shared.outcome",
+      "repeatable": false,
+      "required": true
+    },
+    "motion_animation_gallery": {
+      "type": "component",
+      "component": "pages.design-gallery",
+      "repeatable": false,
+      "required": true
+    },
+    "team_members": {
+      "type": "component",
+      "component": "pages.team-member-list",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

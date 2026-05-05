@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_pages_design_tones",
+  "info": {
+    "displayName": "DesignTone",
+    "icon": "brush"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

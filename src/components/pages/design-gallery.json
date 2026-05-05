@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_pages_design_galleries",
+  "info": {
+    "displayName": "DesignGallery",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "medias": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios"
+      ]
+    },
+    "media_layout": {
+      "type": "enumeration",
+      "required": true,
+      "default": "one column",
+      "enum": [
+        "one column",
+        "two columns",
+        "two columns - compact"
+      ]
+    }
+  },
+  "config": {}
+}
