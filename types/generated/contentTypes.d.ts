@@ -481,7 +481,6 @@ export interface ApiDesignProjectDesignProject
       Schema.Attribute.Private;
     design_tone: Schema.Attribute.Component<'pages.design-tone', false> &
       Schema.Attribute.Required;
-    hero: Schema.Attribute.Component<'shared.hero', false>;
     hero_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     > &
@@ -513,6 +512,7 @@ export interface ApiDesignProjectDesignProject
       Schema.Attribute.Required;
     thumbnail_image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

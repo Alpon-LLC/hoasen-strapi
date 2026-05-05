@@ -11,10 +11,9 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "hero": {
-      "type": "component",
-      "component": "shared.hero",
-      "repeatable": false
+    "title": {
+      "type": "string",
+      "required": true
     },
     "hero_image": {
       "type": "media",
