@@ -534,51 +534,123 @@ export interface ApiDesignProjectDesignProject
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     brief_and_background: Schema.Attribute.Component<
       'shared.brief-background',
       false
     > &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     design_tone: Schema.Attribute.Component<'pages.design-tone', false> &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     hero_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     > &
-      Schema.Attribute.Required;
-    hero_logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    hero_logo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::design-project.design-project'
-    > &
-      Schema.Attribute.Private;
+    >;
     logo_gallery: Schema.Attribute.Component<'pages.design-gallery', false> &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     logo_icon: Schema.Attribute.Media<'images' | 'videos'> &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     motion_animation_gallery: Schema.Attribute.Component<
       'pages.design-gallery',
       false
     > &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     outcome: Schema.Attribute.Component<'shared.outcome', false> &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     pattern_gallery: Schema.Attribute.Component<'pages.design-gallery', false> &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     product_gallery: Schema.Attribute.Component<'pages.design-gallery', false> &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     team_members: Schema.Attribute.Component<'pages.team-member-list', false> &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     thumbnail_image: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -627,8 +699,18 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     bg_color_code: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 7;
         minLength: 7;
@@ -637,20 +719,34 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    description: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::industry.industry'
-    > &
-      Schema.Attribute.Private;
+    >;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     projects: Schema.Attribute.Relation<'manyToMany', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     text_color_code: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 7;
         minLength: 7;
@@ -671,52 +767,145 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     brief_and_background: Schema.Attribute.Component<
       'shared.brief-background',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     business_objectives: Schema.Attribute.Component<
       'shared.business-objective',
       true
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    domain_subtitle: Schema.Attribute.String;
-    gallery_images: Schema.Attribute.Component<'shared.media', true>;
+    domain_subtitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    gallery_images: Schema.Attribute.Component<'shared.media', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     hero_image: Schema.Attribute.Media<'images' | 'videos'> &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     industries: Schema.Attribute.Relation<
       'manyToMany',
       'api::industry.industry'
     >;
-    is_featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
-    llm_txt: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    is_featured: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
+    llm_txt: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::project.project'
-    > &
-      Schema.Attribute.Private;
-    logo_icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    outcome: Schema.Attribute.Component<'shared.outcome', false>;
+    >;
+    logo_icon: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    outcome: Schema.Attribute.Component<'shared.outcome', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
-    robots_txt: Schema.Attribute.Text;
-    short_description: Schema.Attribute.Text & Schema.Attribute.Required;
+    robots_txt: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    short_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    solutions: Schema.Attribute.Component<'shared.solution', true>;
-    stats: Schema.Attribute.Component<'shared.stat', true>;
-    team_members: Schema.Attribute.Component<'pages.team-member-list', false>;
+    solutions: Schema.Attribute.Component<'shared.solution', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    stats: Schema.Attribute.Component<'shared.stat', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    team_members: Schema.Attribute.Component<'pages.team-member-list', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     tech_infra_items: Schema.Attribute.Relation<
       'manyToMany',
       'api::tech-infra-item.tech-infra-item'
     >;
-    testimonial: Schema.Attribute.Component<'shared.testimonial', false>;
+    testimonial: Schema.Attribute.Component<'shared.testimonial', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     thumbnail_image: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -733,6 +922,11 @@ export interface ApiSkillSkill extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -741,12 +935,16 @@ export interface ApiSkillSkill extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::design-project.design-project'
     >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'> &
-      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'>;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     projects: Schema.Attribute.Relation<'manyToMany', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
@@ -770,36 +968,80 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     blogs: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>;
-    contact_links: Schema.Attribute.Component<'shared.contact-link', true>;
+    contact_links: Schema.Attribute.Component<'shared.contact-link', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    experience: Schema.Attribute.Component<'pages.team-experience', true>;
+    experience: Schema.Attribute.Component<'pages.team-experience', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     framework_and_tool: Schema.Attribute.Component<
       'pages.team-framework-and-tool',
       true
-    >;
-    get_to_know: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    get_to_know: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::team-member.team-member'
-    > &
-      Schema.Attribute.Private;
-    member_role: Schema.Attribute.Component<'pages.team-member-role', true>;
+    >;
+    member_role: Schema.Attribute.Component<'pages.team-member-role', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    why_work_with_them: Schema.Attribute.Text;
+    why_work_with_them: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 
@@ -813,6 +1055,11 @@ export interface ApiTeamPageTeamPage extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
       [
@@ -822,18 +1069,27 @@ export interface ApiTeamPageTeamPage extends Struct.CollectionTypeSchema {
         'pages.team-value',
         'pages.team-member-list',
       ]
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::team-page.team-page'
-    > &
-      Schema.Attribute.Private;
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

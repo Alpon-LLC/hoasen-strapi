@@ -9,10 +9,19 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "name": {
       "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "required": true,
       "unique": true
     },
@@ -23,6 +32,11 @@
     },
     "avatar": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "multiple": false,
       "allowedTypes": [
         "images",
@@ -33,11 +47,21 @@
     },
     "framework_and_tool": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "pages.team-framework-and-tool",
       "repeatable": true
     },
     "experience": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "pages.team-experience",
       "repeatable": true
     },
@@ -48,18 +72,38 @@
       "mappedBy": "team_members"
     },
     "get_to_know": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "why_work_with_them": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "contact_links": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "shared.contact-link",
       "repeatable": true
     },
     "member_role": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "pages.team-member-role",
       "repeatable": true
     },

@@ -9,14 +9,28 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
       "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "required": true
     },
     "hero_image": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "multiple": false,
       "required": true,
       "allowedTypes": [
@@ -28,6 +42,11 @@
     },
     "hero_logo": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "multiple": false,
       "allowedTypes": [
         "images",
@@ -44,6 +63,11 @@
     },
     "logo_icon": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "multiple": false,
       "required": true,
       "allowedTypes": [
@@ -53,6 +77,11 @@
     },
     "thumbnail_image": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "multiple": false,
       "required": true,
       "allowedTypes": [
@@ -61,48 +90,88 @@
     },
     "brief_and_background": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "shared.brief-background",
       "repeatable": false,
       "required": true
     },
     "design_tone": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "pages.design-tone",
       "repeatable": false,
       "required": true
     },
     "logo_gallery": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "pages.design-gallery",
       "repeatable": false,
       "required": true
     },
     "pattern_gallery": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "pages.design-gallery",
       "repeatable": false,
       "required": true
     },
     "product_gallery": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "pages.design-gallery",
       "repeatable": false,
       "required": true
     },
     "outcome": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "shared.outcome",
       "repeatable": false,
       "required": true
     },
     "motion_animation_gallery": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "pages.design-gallery",
       "repeatable": false,
       "required": true
     },
     "team_members": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "pages.team-member-list",
       "repeatable": false,
       "required": true
