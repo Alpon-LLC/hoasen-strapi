@@ -67,6 +67,14 @@
       "relation": "manyToMany",
       "target": "api::industry.industry",
       "inversedBy": "blogs"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
