@@ -39,6 +39,12 @@
       "relation": "manyToMany",
       "target": "api::project.project",
       "inversedBy": "industries"
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog.blog",
+      "mappedBy": "categories"
     }
   }
 }
