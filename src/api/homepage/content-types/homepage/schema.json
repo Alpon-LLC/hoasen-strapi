@@ -1,10 +1,10 @@
 {
-  "kind": "collectionType",
-  "collectionName": "home_pages",
+  "kind": "singleType",
+  "collectionName": "homepages",
   "info": {
-    "singularName": "home-page",
-    "pluralName": "home-pages",
-    "displayName": "HomePage"
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,12 @@
       "type": "component",
       "component": "shared.hero",
       "repeatable": false,
-      "required": false
+      "required": true
+    },
+    "capabilities": {
+      "type": "component",
+      "component": "pages.home-capability-card",
+      "repeatable": true
     },
     "testimonials": {
       "type": "component",

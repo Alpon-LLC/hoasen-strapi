@@ -725,6 +725,41 @@ export interface ApiHomePageHomePage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
+  collectionName: 'homepages';
+  info: {
+    displayName: 'Homepage';
+    pluralName: 'homepages';
+    singularName: 'homepage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    capabilities: Schema.Attribute.Component<
+      'pages.home-capability-card',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'shared.hero', false> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homepage.homepage'
+    > &
+      Schema.Attribute.Private;
+    logo_cloud: Schema.Attribute.Component<'shared.logo-cloud', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    testimonials: Schema.Attribute.Component<'shared.testimonial', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
   collectionName: 'industries';
   info: {
@@ -1680,6 +1715,7 @@ declare module '@strapi/strapi' {
       'api::design-project.design-project': ApiDesignProjectDesignProject;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::homepage.homepage': ApiHomepageHomepage;
       'api::industry.industry': ApiIndustryIndustry;
       'api::project.project': ApiProjectProject;
       'api::skill.skill': ApiSkillSkill;
