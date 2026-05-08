@@ -309,6 +309,7 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
   attributes: {
     keywords: Schema.Attribute.String;
+    llm_txt: Schema.Attribute.Text;
     meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
     meta_title: Schema.Attribute.String & Schema.Attribute.Required;
     share_image: Schema.Attribute.Media<'images'>;

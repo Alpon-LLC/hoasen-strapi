@@ -26,6 +26,9 @@
     },
     "keywords": {
       "type": "string"
+    },
+    "llm_txt": {
+      "type": "text"
     }
   }
 }
