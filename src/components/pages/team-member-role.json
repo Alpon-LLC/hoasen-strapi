@@ -9,7 +9,7 @@
     "role_name": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "role_description": {
       "type": "string"

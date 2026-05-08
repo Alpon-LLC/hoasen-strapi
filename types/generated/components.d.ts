@@ -110,9 +110,7 @@ export interface PagesTeamMemberRole extends Struct.ComponentSchema {
   };
   attributes: {
     role_description: Schema.Attribute.String;
-    role_name: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    role_name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
