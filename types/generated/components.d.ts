@@ -247,6 +247,19 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedMediaLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_media_links';
+  info: {
+    displayName: 'MediaLink';
+    icon: 'picture';
+  };
+  attributes: {
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'images' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface SharedOutcome extends Struct.ComponentSchema {
   collectionName: 'components_shared_outcomes';
   info: {
@@ -378,6 +391,7 @@ declare module '@strapi/strapi' {
       'shared.hero': SharedHero;
       'shared.logo-cloud': SharedLogoCloud;
       'shared.media': SharedMedia;
+      'shared.media-link': SharedMediaLink;
       'shared.outcome': SharedOutcome;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

@@ -27,10 +27,11 @@
       "component": "shared.testimonial",
       "repeatable": true
     },
-    "logo_cloud": {
+    "brand_logos": {
       "type": "component",
-      "component": "shared.logo-cloud",
-      "repeatable": false
+      "component": "shared.media-link",
+      "repeatable": true,
+      "required": false
     }
   }
 }

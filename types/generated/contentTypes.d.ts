@@ -695,36 +695,6 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiHomePageHomePage extends Struct.CollectionTypeSchema {
-  collectionName: 'home_pages';
-  info: {
-    displayName: 'HomePage';
-    pluralName: 'home-pages';
-    singularName: 'home-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    hero: Schema.Attribute.Component<'shared.hero', false>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::home-page.home-page'
-    > &
-      Schema.Attribute.Private;
-    logo_cloud: Schema.Attribute.Component<'shared.logo-cloud', false>;
-    publishedAt: Schema.Attribute.DateTime;
-    testimonials: Schema.Attribute.Component<'shared.testimonial', true>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -736,6 +706,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    brand_logos: Schema.Attribute.Component<'shared.media-link', true>;
     capabilities: Schema.Attribute.Component<
       'pages.home-capability-card',
       true
@@ -751,7 +722,6 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       'api::homepage.homepage'
     > &
       Schema.Attribute.Private;
-    logo_cloud: Schema.Attribute.Component<'shared.logo-cloud', false>;
     publishedAt: Schema.Attribute.DateTime;
     testimonials: Schema.Attribute.Component<'shared.testimonial', true>;
     updatedAt: Schema.Attribute.DateTime;
@@ -1714,7 +1684,6 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::design-project.design-project': ApiDesignProjectDesignProject;
       'api::global.global': ApiGlobalGlobal;
-      'api::home-page.home-page': ApiHomePageHomePage;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::industry.industry': ApiIndustryIndustry;
       'api::project.project': ApiProjectProject;
