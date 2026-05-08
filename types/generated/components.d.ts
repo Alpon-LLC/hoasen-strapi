@@ -257,6 +257,7 @@ export interface SharedMediaLink extends Struct.ComponentSchema {
     link: Schema.Attribute.String & Schema.Attribute.Required;
     media: Schema.Attribute.Media<'images' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
+    title: Schema.Attribute.String;
   };
 }
 
