@@ -634,6 +634,12 @@ export interface ApiDesignProjectDesignProject
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     team_members: Schema.Attribute.Component<'pages.team-member-list', false> &
