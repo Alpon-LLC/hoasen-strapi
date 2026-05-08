@@ -21,6 +21,17 @@
     "author_company": {
       "type": "string",
       "required": false
+    },
+    "author_company_website": {
+      "type": "string"
+    },
+    "author_company_logo": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     }
   },
   "config": {}

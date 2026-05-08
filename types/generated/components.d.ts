@@ -31,6 +31,25 @@ export interface PagesDesignTone extends Struct.ComponentSchema {
   };
 }
 
+export interface PagesHomeCapabilityCard extends Struct.ComponentSchema {
+  collectionName: 'components_pages_home_capability_cards';
+  info: {
+    displayName: 'HomeCapabilityCard';
+    icon: 'puzzle';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    framework_and_tools: Schema.Attribute.Component<
+      'pages.team-framework-and-tool',
+      true
+    > &
+      Schema.Attribute.Required;
+    icon: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface PagesTeamCulture extends Struct.ComponentSchema {
   collectionName: 'components_pages_team_cultures';
   info: {
@@ -195,8 +214,21 @@ export interface SharedHero extends Struct.ComponentSchema {
     displayName: 'Hero';
   };
   attributes: {
+    eyebrow: Schema.Attribute.String & Schema.Attribute.DefaultTo<'eyebrow'>;
     subtitle: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedLogoCloud extends Struct.ComponentSchema {
+  collectionName: 'components_shared_logo_clouds';
+  info: {
+    displayName: 'LogoCloud';
+    icon: 'cloud';
+  };
+  attributes: {
+    logos: Schema.Attribute.Media<'images' | 'videos' | 'audios', true> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -318,6 +350,8 @@ export interface SharedTestimonial extends Struct.ComponentSchema {
   };
   attributes: {
     author_company: Schema.Attribute.String;
+    author_company_logo: Schema.Attribute.Media<'images' | 'videos', true>;
+    author_company_website: Schema.Attribute.String;
     author_name: Schema.Attribute.String;
     author_role: Schema.Attribute.String;
     quote: Schema.Attribute.Blocks & Schema.Attribute.Required;
@@ -329,6 +363,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'pages.design-gallery': PagesDesignGallery;
       'pages.design-tone': PagesDesignTone;
+      'pages.home-capability-card': PagesHomeCapabilityCard;
       'pages.team-culture': PagesTeamCulture;
       'pages.team-experience': PagesTeamExperience;
       'pages.team-framework-and-tool': PagesTeamFrameworkAndTool;
@@ -341,6 +376,7 @@ declare module '@strapi/strapi' {
       'shared.contact-link': SharedContactLink;
       'shared.gallery-images': SharedGalleryImages;
       'shared.hero': SharedHero;
+      'shared.logo-cloud': SharedLogoCloud;
       'shared.media': SharedMedia;
       'shared.outcome': SharedOutcome;
       'shared.quote': SharedQuote;

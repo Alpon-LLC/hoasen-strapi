@@ -12,6 +12,10 @@
     "subtitle": {
       "type": "text",
       "required": false
+    },
+    "eyebrow": {
+      "type": "string",
+      "default": "eyebrow"
     }
   },
   "config": {}

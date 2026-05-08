@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_logo_clouds",
+  "info": {
+    "displayName": "LogoCloud",
+    "icon": "cloud"
+  },
+  "options": {},
+  "attributes": {
+    "logos": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
