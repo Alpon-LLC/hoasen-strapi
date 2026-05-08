@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "team_pages",
   "info": {
     "singularName": "team-page",
@@ -15,6 +15,56 @@
     }
   },
   "attributes": {
+    "hero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.hero",
+      "repeatable": false
+    },
+    "gallery_images": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.gallery-images",
+      "repeatable": false
+    },
+    "our_culture_section": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "pages.team-culture",
+      "repeatable": false
+    },
+    "our_values_section": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "pages.team-value",
+      "repeatable": false
+    },
+    "team_members": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "pages.team-member-list",
+      "repeatable": false
+    },
     "seo": {
       "type": "component",
       "pluginOptions": {
@@ -24,21 +74,6 @@
       },
       "component": "shared.seo",
       "repeatable": false
-    },
-    "blocks": {
-      "type": "dynamiczone",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "components": [
-        "shared.hero",
-        "shared.gallery-images",
-        "pages.team-culture",
-        "pages.team-value",
-        "pages.team-member-list"
-      ]
     }
   }
 }
