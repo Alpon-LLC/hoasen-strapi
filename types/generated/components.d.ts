@@ -50,16 +50,6 @@ export interface PagesHomeCapabilityCard extends Struct.ComponentSchema {
   };
 }
 
-export interface PagesTeamCulture extends Struct.ComponentSchema {
-  collectionName: 'components_pages_team_cultures';
-  info: {
-    displayName: 'TeamCulture';
-  };
-  attributes: {
-    Description: Schema.Attribute.Text & Schema.Attribute.Required;
-  };
-}
-
 export interface PagesTeamExperience extends Struct.ComponentSchema {
   collectionName: 'components_pages_team_experiences';
   info: {
@@ -89,19 +79,6 @@ export interface PagesTeamFrameworkAndTool extends Struct.ComponentSchema {
   };
 }
 
-export interface PagesTeamMemberList extends Struct.ComponentSchema {
-  collectionName: 'components_pages_team_member_lists';
-  info: {
-    displayName: 'TeamMemberList';
-  };
-  attributes: {
-    featured_members: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::team-member.team-member'
-    >;
-  };
-}
-
 export interface PagesTeamMemberRole extends Struct.ComponentSchema {
   collectionName: 'components_pages_team_member_roles';
   info: {
@@ -111,29 +88,6 @@ export interface PagesTeamMemberRole extends Struct.ComponentSchema {
   attributes: {
     role_description: Schema.Attribute.String;
     role_name: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface PagesTeamValue extends Struct.ComponentSchema {
-  collectionName: 'components_pages_team_values';
-  info: {
-    displayName: 'TeamValueList';
-  };
-  attributes: {
-    items: Schema.Attribute.Component<'pages.team-value-item', true>;
-  };
-}
-
-export interface PagesTeamValueItem extends Struct.ComponentSchema {
-  collectionName: 'components_pages_team_value_items';
-  info: {
-    displayName: 'TeamValueItem';
-  };
-  attributes: {
-    description: Schema.Attribute.String & Schema.Attribute.Required;
-    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -281,6 +235,7 @@ export interface SharedQuote extends Struct.ComponentSchema {
   };
   attributes: {
     body: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images' | 'videos'>;
     title: Schema.Attribute.String;
   };
 }
@@ -377,13 +332,9 @@ declare module '@strapi/strapi' {
       'pages.design-gallery': PagesDesignGallery;
       'pages.design-tone': PagesDesignTone;
       'pages.home-capability-card': PagesHomeCapabilityCard;
-      'pages.team-culture': PagesTeamCulture;
       'pages.team-experience': PagesTeamExperience;
       'pages.team-framework-and-tool': PagesTeamFrameworkAndTool;
-      'pages.team-member-list': PagesTeamMemberList;
       'pages.team-member-role': PagesTeamMemberRole;
-      'pages.team-value': PagesTeamValue;
-      'pages.team-value-item': PagesTeamValueItem;
       'shared.brief-background': SharedBriefBackground;
       'shared.business-objective': SharedBusinessObjective;
       'shared.contact-link': SharedContactLink;

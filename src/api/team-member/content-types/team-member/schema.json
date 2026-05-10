@@ -112,6 +112,18 @@
       "relation": "oneToMany",
       "target": "api::blog.blog",
       "mappedBy": "author"
+    },
+    "design_projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::design-project.design-project",
+      "mappedBy": "involved_members"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project.project",
+      "mappedBy": "involved_members"
     }
   }
 }

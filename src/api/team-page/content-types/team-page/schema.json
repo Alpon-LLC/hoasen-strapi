@@ -15,16 +15,6 @@
     }
   },
   "attributes": {
-    "hero": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.hero",
-      "repeatable": false
-    },
     "gallery_images": {
       "type": "component",
       "pluginOptions": {
@@ -42,7 +32,7 @@
           "localized": true
         }
       },
-      "component": "pages.team-culture",
+      "component": "shared.quote",
       "repeatable": false
     },
     "our_values_section": {
@@ -52,18 +42,13 @@
           "localized": true
         }
       },
-      "component": "pages.team-value",
-      "repeatable": false
+      "component": "shared.quote",
+      "repeatable": true
     },
-    "team_members": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "pages.team-member-list",
-      "repeatable": false
+    "featured_members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team-member.team-member"
     },
     "seo": {
       "type": "component",

@@ -597,6 +597,10 @@ export interface ApiDesignProjectDesignProject
           localized: true;
         };
       }>;
+    involved_members: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::team-member.team-member'
+    >;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -656,13 +660,6 @@ export interface ApiDesignProjectDesignProject
       }>;
     skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    team_members: Schema.Attribute.Component<'pages.team-member-list', false> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     thumbnail_image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -931,6 +928,10 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::industry.industry'
     >;
+    involved_members: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::team-member.team-member'
+    >;
     is_featured: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -979,12 +980,6 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
         };
       }>;
     stats: Schema.Attribute.Component<'shared.stat', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    team_members: Schema.Attribute.Component<'pages.team-member-list', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1098,6 +1093,10 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    design_projects: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::design-project.design-project'
+    >;
     experience: Schema.Attribute.Component<'pages.team-experience', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1138,6 +1137,7 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    projects: Schema.Attribute.Relation<'manyToMany', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
     skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
@@ -1172,13 +1172,11 @@ export interface ApiTeamPageTeamPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    featured_members: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::team-member.team-member'
+    >;
     gallery_images: Schema.Attribute.Component<'shared.gallery-images', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    hero: Schema.Attribute.Component<'shared.hero', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1189,16 +1187,13 @@ export interface ApiTeamPageTeamPage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::team-page.team-page'
     >;
-    our_culture_section: Schema.Attribute.Component<
-      'pages.team-culture',
-      false
-    > &
+    our_culture_section: Schema.Attribute.Component<'shared.quote', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    our_values_section: Schema.Attribute.Component<'pages.team-value', false> &
+    our_values_section: Schema.Attribute.Component<'shared.quote', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1206,12 +1201,6 @@ export interface ApiTeamPageTeamPage extends Struct.SingleTypeSchema {
       }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    team_members: Schema.Attribute.Component<'pages.team-member-list', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

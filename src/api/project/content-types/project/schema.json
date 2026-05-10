@@ -183,15 +183,11 @@
       "target": "api::tech-infra-item.tech-infra-item",
       "inversedBy": "projects"
     },
-    "team_members": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "pages.team-member-list",
-      "repeatable": false
+    "involved_members": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team-member.team-member",
+      "inversedBy": "projects"
     },
     "seo": {
       "type": "component",

@@ -170,16 +170,11 @@
       "repeatable": false,
       "required": true
     },
-    "team_members": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "pages.team-member-list",
-      "repeatable": false,
-      "required": true
+    "involved_members": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team-member.team-member",
+      "inversedBy": "design_projects"
     },
     "seo": {
       "type": "component",
