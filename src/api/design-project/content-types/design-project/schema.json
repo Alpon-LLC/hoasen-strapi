@@ -185,6 +185,21 @@
       },
       "component": "shared.seo",
       "repeatable": false
+    },
+    "pitch_deck_file": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
