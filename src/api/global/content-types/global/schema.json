@@ -66,6 +66,14 @@
           "localized": true
         }
       }
+    },
+    "sitemap_xml": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }
