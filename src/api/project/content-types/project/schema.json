@@ -26,6 +26,11 @@
     },
     "slug": {
       "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
       "targetField": "title",
       "required": true
     },
@@ -198,6 +203,14 @@
       },
       "component": "shared.seo",
       "repeatable": false
+    },
+    "order": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

@@ -630,6 +630,12 @@ export interface ApiDesignProjectDesignProject
           localized: true;
         };
       }>;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     outcome: Schema.Attribute.Component<'shared.outcome', false> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -642,6 +648,14 @@ export interface ApiDesignProjectDesignProject
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
+        };
+      }>;
+    pitch_deck_file: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     product_gallery: Schema.Attribute.Component<'pages.design-gallery', false> &
@@ -703,7 +717,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     locale: Schema.Attribute.String;
@@ -712,7 +726,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     robots_txt: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     root_seo: Schema.Attribute.Component<'shared.seo', false> &
@@ -733,6 +747,12 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
+        };
+      }>;
+    sitemap_xml: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     updatedAt: Schema.Attribute.DateTime;
@@ -951,6 +971,12 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     outcome: Schema.Attribute.Component<'shared.outcome', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -972,7 +998,13 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
         };
       }>;
     skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     solutions: Schema.Attribute.Component<'shared.solution', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

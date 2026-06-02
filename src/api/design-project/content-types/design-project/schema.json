@@ -200,6 +200,14 @@
         "videos",
         "audios"
       ]
+    },
+    "order": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
